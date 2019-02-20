@@ -9,19 +9,20 @@ module.exports = {
       'error',
       'always',
       {
-        js: 'never'
-      }
+        js: 'never',
+      },
     ],
 
-    'global-require': [0],
+    // Support JSX syntax in both .js and .jsx files
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
 
     // Recommend not to leave any console.log in your code
     // Use console.error, console.warn and console.info instead
     'no-console': [
       'error',
       {
-        allow: ['warn', 'error', 'info']
-      }
+        allow: ['warn', 'error', 'info'],
+      },
     ],
 
     // ESLint plugin for prettier formatting
@@ -29,9 +30,10 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        // https://github.com/prettier/prettier#options
-        singleQuote: true
-      }
-    ]
-  }
+        // https://prettier.io/docs/en/options.html
+        singleQuote: true,
+        trailingComma: 'es5',
+      },
+    ],
+  },
 };
