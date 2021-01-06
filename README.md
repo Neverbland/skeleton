@@ -1,8 +1,8 @@
 # SKELETON
 
-This is a barebones project to use as a starting point for any JavaScript project. Be that a script, an Expo app, or a website.
+This is a barebones project to use as a starting point for any TypeScript project that plans to use [NextJS](https://nextjs.org).
 
-All it includes is code quality controls.
+The only other opinionated thing installed here so far is [Styled Components](https://styled-components.com/).
 
 Enjoy!
 
@@ -14,5 +14,7 @@ Please make sure you have the following plugins installed for your text editor:
 - Prettier
 - ESLint
 
-Run `yarn` or `npm i`
+Run:
 
+- `yarn`
+- `yarn dev`
