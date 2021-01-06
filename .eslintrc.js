@@ -1,38 +1,36 @@
+const group = (pattern) => ({
+  pattern,
+  group: 'external',
+  position: 'after',
+});
+
 module.exports = {
-  extends: ['airbnb', 'prettier'],
-  parser: 'babel-eslint',
-  plugins: ['prettier'],
-
+  parser: '@typescript-eslint/parser',
+  extends: ['plugin:import/typescript'],
+  plugins: ['@typescript-eslint', 'import'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx', '*.d.ts'],
+      parserOptions: {
+        project: './tsconfig.json',
+      },
+    },
+  ],
   rules: {
-    // No need to append .js extension to imports
-    'import/extensions': [
-      'error',
-      'always',
+    'import/order': [
+      'warn',
       {
-        js: 'never',
-      },
-    ],
-
-    // Support JSX syntax in both .js and .jsx files
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-
-    // Recommend not to leave any console.log in your code
-    // Use console.error, console.warn and console.info instead
-    'no-console': [
-      'error',
-      {
-        allow: ['warn', 'error', 'info'],
-      },
-    ],
-
-    // ESLint plugin for prettier formatting
-    // https://github.com/prettier/eslint-plugin-prettier
-    'prettier/prettier': [
-      'error',
-      {
-        // https://prettier.io/docs/en/options.html
-        singleQuote: true,
-        trailingComma: 'es5',
+        groups: [
+          ['builtin', 'external'],
+          'internal',
+          ['parent', 'index', 'sibling'],
+        ],
+        pathGroups: [group('@{components,styles}/**'), group('@utils/**')],
+        pathGroupsExcludedImportTypes: ['builtin'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+        },
       },
     ],
   },
