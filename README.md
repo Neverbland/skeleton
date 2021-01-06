@@ -6,6 +6,8 @@ All it includes is code quality controls.
 
 Enjoy!
 
+There is also a [branch for NextJS](https://github.com/Neverbland/skeleton/tree/nextjs)
+
 ## Setup
 
 Please make sure you have the following plugins installed for your text editor:
@@ -15,4 +17,3 @@ Please make sure you have the following plugins installed for your text editor:
 - ESLint
 
 Run `yarn` or `npm i`
-
