@@ -1,6 +1,6 @@
 # SKELETON
 
-This is a barebones project to use as a starting point for any TypeScript project that plans to use [NextJS](https://nextjs.org).
+This is a barebones project to use as a starting point for any TypeScript project that plans to use [NextJS](https://nextjs.org) with [Preact](https://github.com/preactjs/preact-compat).
 
 The only other opinionated thing installed here so far is:
 - [Styled Components](https://styled-components.com/)
